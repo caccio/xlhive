@@ -1,0 +1,9 @@
+add jar ExcelInputFormat-1.0-SNAPSHOT-jar-with-dependencies.jar;
+
+create external table xls (ColA int, ColB String, ColC float) 
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ',' ESCAPED BY '\\'
+STORED AS INPUTFORMAT 'com.bimodeler.xlhive.ExcelInputFormat' 
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.IgnoreKeyTextOutputFormat' 
+LOCATION '/user/cloudera/xls'
+TBLPROPERTIES ("skip.header.line.count"="2");
