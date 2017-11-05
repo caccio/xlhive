@@ -6,4 +6,4 @@ FIELDS TERMINATED BY ',' ESCAPED BY '\\'
 STORED AS INPUTFORMAT 'com.bimodeler.xlhive.ExcelInputFormat' 
 OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.IgnoreKeyTextOutputFormat' 
 LOCATION '/user/cloudera/xls'
-TBLPROPERTIES ("skip.header.line.count"="2");
+TBLPROPERTIES ("skip.header.line.count"="1", "com.bimodeler.xlhive.sheetName"="Data");
